@@ -7,12 +7,12 @@ import java.security.cert.LDAPCertStoreParameters
 
 class NoteViewModel(application: Application) : AndroidViewModel(application) {
 
-    val allData : LiveData<List<Note>>
+    val allNotes  : LiveData<List<Note>>
 
     init {
         val dao = NoteDatabase.getDatabase(application).getNoteDao()
         val repository = NoteRepository(dao)
-        allData = repository.allData()
+        allNotes = repository.allData()
     }
 
 }
